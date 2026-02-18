@@ -2,6 +2,10 @@
 
 #include <GopherEngine/Core/Transform.hpp>
 #include <GopherEngine/Core/Component.hpp>
+#include <GopherEngine/Resource/Mesh.hpp>
+
+#include <memory>
+using namespace std;
 
 namespace GopherEngine
 {
@@ -12,7 +16,7 @@ namespace GopherEngine
             void update(Transform& transform, float delta_time) override;
             void draw(const glm::mat4 &world_matrix) override;
 
-        private:
-            // Add any member variables you need for the mesh component here
+        protected:
+            shared_ptr<Mesh> mesh_;
     };
 }
