@@ -54,6 +54,17 @@ target_sources(GopherEngineRenderer PRIVATE ${GOPHERENGINERENDERER_SOURCES})
 target_link_libraries(GopherEngineRenderer PUBLIC SFML::Window)
 target_link_libraries(GopherEngineRenderer PUBLIC glm::glm)
 
+# Resource library
+add_library(GopherEngineResource)
+target_compile_features(GopherEngineResource PUBLIC cxx_std_17)
+target_include_directories(GopherEngineResource PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+file(GLOB_RECURSE GOPHERENGINE_RESOURCE_SOURCES CONFIGURE_DEPENDS
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/GopherEngine/Resource/*.cpp
+)
+target_sources(GopherEngineResource PRIVATE ${GOPHERENGINE_RESOURCE_SOURCES})
+target_link_libraries(GopherEngineResource PUBLIC SFML::Window)
+target_link_libraries(GopherEngineResource PUBLIC glm::glm)
+
 # Test executable
 add_executable(MainLoopTest)
 target_compile_features(MainLoopTest PRIVATE cxx_std_17)

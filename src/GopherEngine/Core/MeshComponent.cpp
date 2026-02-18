@@ -21,52 +21,8 @@ void MeshComponent::update(Transform& transform, float delta_time) {
 }
 
 void MeshComponent::draw(const glm::mat4 &world_matrix) {
-    // Define a 3D cube (6 faces made of 2 triangles)
-        constexpr std::array<GLfloat, 180> cube =
-        {
-            -.5f, -.5f, -.5f,
-            -.5f,  .5f, -.5f,
-            -.5f, -.5f,  .5f,
-            -.5f, -.5f,  .5f, 
-            -.5f,  .5f, -.5f, 
-            -.5f,  .5f,  .5f,
-
-            .5f, -.5f, -.5f,
-            .5f,  .5f, -.5f,
-            .5f, -.5f,  .5f,
-            .5f, -.5f,  .5f,
-            .5f,  .5f, -.5f,
-            .5f,  .5f,  .5f,
-
-            -.5f, -.5f, -.5f,
-            .5f, -.5f, -.5f,
-            -.5f, -.5f,  .5f,
-            -.5f, -.5f,  .5f, 
-            .5f, -.5f, -.5f,
-            .5f, -.5f,  .5f,
-
-            -.5f,  .5f, -.5f,
-            .5f,  .5f, -.5f,
-            -.5f,  .5f,  .5f,
-            -.5f,  .5f,  .5f,
-            .5f,  .5f, -.5f,
-            .5f,  .5f,  .5f,
-
-            -.5f, -.5f, -.5f, 
-            .5f, -.5f, -.5f,
-            -.5f,  .5f, -.5f,
-            -.5f,  .5f, -.5f, 
-            .5f, -.5f, -.5f,
-            .5f,  .5f, -.5f,
-
-            -.5f, -.5f,  .5f, 
-            .5f, -.5f,  .5f,
-            -.5f,  .5f,  .5f,
-            -.5f,  .5f,  .5f,
-            .5f, -.5f,  .5f, 
-            .5f,  .5f,  .5f
-        };
-
+    
+        /*
         // Enable the position vertex component
         glEnableClientState(GL_VERTEX_ARRAY);
         glVertexPointer(3, GL_FLOAT, 3 * sizeof(GLfloat), cube.data());
@@ -86,4 +42,5 @@ void MeshComponent::draw(const glm::mat4 &world_matrix) {
 
         // Draw the cube
         glDrawArrays(GL_TRIANGLES, 0, 36);
+        */
 }
