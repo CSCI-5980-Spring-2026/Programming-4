@@ -5,6 +5,7 @@
  */ 
 
 #include <GopherEngine/Core/MainLoop.hpp>
+#include <GopherEngine/Core/MeshComponent.hpp>
 using namespace GopherEngine;
 
 #include <iostream>
@@ -40,8 +41,9 @@ void MainLoopTest::initialize() {
 	window_.set_title("CSCI 5980 Programming 4");
 
 	// Create a single node in the scene to test that the update and draw functions are working
-	scene_->create_node();
+	shared_ptr<Node> node = scene_->create_node();
 
+	node->add_component(make_shared<MeshComponent>());
 }
 
 void MainLoopTest::update(float delta_time) {

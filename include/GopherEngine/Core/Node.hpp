@@ -1,5 +1,8 @@
 #pragma once
 
+#include <GopherEngine/Core/Component.hpp>
+#include <GopherEngine/Core/Transform.hpp>
+
 #include <glm/glm.hpp> // general glm header for basic types like vec3 and mat4
 #include <glm/gtc/quaternion.hpp> // glm quaternion functions
 
@@ -19,13 +22,15 @@ namespace GopherEngine
             void update_matrices();
             void draw();
 
+            void add_component(shared_ptr<Component> component);
+
         private:
             uint32_t id_;
-            glm::vec3 position_{0.f, 0.f, 0.f};
-            glm::quat rotation_{1.f, 0.f, 0.f, 0.f};
-            glm::vec3 scale_{1.f, 1.f, 1.f};
+            Transform transform_;
             glm::mat4 local_matrix_{1.f}; 
             glm::mat4 world_matrix_{1.f}; 
+
+            vector<shared_ptr<Component>> components_;
 
             // Static member variable declaration for the id counter
             static std::atomic<std::uint32_t> id_counter_;
